@@ -1,0 +1,22 @@
+# .gitpod.yml
+tasks:
+  - name: Setup Flutter and build
+    init: |
+      export PATH="$PATH:/workspace/flutter/bin"
+      flutter doctor
+      cd oliracoffee_table_ordering
+      flutter pub get
+    command: |
+      cd oliracoffee_table_ordering
+      flutter build web
+      cd build/web
+      python3 -m http.server 8080
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+    visibility: public
+
+vscode:
+  extensions:
+    - Dart-Code.flutter
