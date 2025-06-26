@@ -1,12 +1,12 @@
 tasks:
   - name: Install & Serve Flutter Web App
     init: |
-      export PATH="$PATH:/workspace/flutter/bin"
+      - export PATH="$PATH:/workspace/oliracoffee_table_ordering/flutter/bin"
       cd oliracoffee_table_ordering
       flutter pub get
       flutter build web
     command: |
-      export PATH="$PATH:/workspace/flutter/bin"
+      - export PATH="$PATH:/workspace/oliracoffee_table_ordering/flutter/bin"
       cd oliracoffee_table_ordering/build/web
       python3 -m http.server 8080
 
